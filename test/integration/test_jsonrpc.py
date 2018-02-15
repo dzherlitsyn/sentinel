@@ -16,12 +16,12 @@ def test_endorphind():
     config_text = EndorphinConfig.slurp_config_file(config.endorphin_conf)
     network = 'mainnet'
     is_testnet = False
-    genesis_hash = u'00000d31b656910f3d611b2cf1917bec57557c163ba89ed522848757a2e50a44'
+    genesis_hash = u'00000ff16b1058bab859035652f0f0297e9b0d549a1c915fe9002b76514d3887'
     for line in config_text.split("\n"):
         if line.startswith('testnet=1'):
             network = 'testnet'
             is_testnet = True
-            genesis_hash = u'00000f83c051bb110fa1b2e45e14d673d1eb11a6990333e5d2b0e1e6e0154288'
+            genesis_hash = u'000009edd3461101beed7a51df4c4edf3c7f0d79e1d1c4ce762d79acd08c1065'
 
     creds = EndorphinConfig.get_rpc_creds(config_text, network)
     endorphind = EndorphinDaemon(**creds)
